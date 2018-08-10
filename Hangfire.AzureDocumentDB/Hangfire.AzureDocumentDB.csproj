@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFrameworks>net461;netstandard2.0</TargetFrameworks>
+        <TargetFramework>netstandard2.0</TargetFramework>
         <ProductName>Hangfire.AzureDocumentDB</ProductName>
         <Title>Hangfire.AzureDocumentDB</Title>
         <Company>Hangfire.AzureDocumentDB</Company>
@@ -20,19 +20,14 @@
     <PropertyGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
         <DefineConstants>NETCORE;NETSTANDARD;NETSTANDARD2_0</DefineConstants>
     </PropertyGroup>
-    <PropertyGroup Condition="'$(TargetFramework)' == 'net461'">
-        <DefineConstants>NET461;NETFULL</DefineConstants>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net461|AnyCPU'">
-        <DocumentationFile>bin\Release\net461\Hangfire.AzureDocumentDB.xml</DocumentationFile>
-    </PropertyGroup>
+
     <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
         <DocumentationFile>bin\Release\netstandard2.0\Hangfire.AzureDocumentDB.xml</DocumentationFile>
     </PropertyGroup>
     <ItemGroup>
-        <PackageReference Include="Hangfire.Core" Version="1.6.17" />
-        <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
-        <PackageReference Include="System.ValueTuple" Version="4.4.0" />
+        <PackageReference Include="Hangfire.Core" Version="1.6.20" />
+        <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+        <PackageReference Include="System.ValueTuple" Version="4.5.0" />
     </ItemGroup>
     <ItemGroup>
         <EmbeddedResource Include="StoredProcedure\deleteExpiredDocuments.js" />
